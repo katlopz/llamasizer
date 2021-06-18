@@ -1,4 +1,4 @@
-# llamasizer
+# Llamasizer
 
 Launched to https://katlopz.github.io/llamasizer/  
 Made with p5.js 

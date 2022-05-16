@@ -20,6 +20,8 @@ var head;
 var prevX; 
 var prevY;
 
+var input;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
@@ -81,6 +83,10 @@ function setup() {
   upRock.oct = 1;
   downRock = new Rock(width-100, 550, 20, -1);
   downRock.oct = -1;
+  
+  //temp bug fix (needs user input for sound to work)
+  input = createInput();
+  input.position(50, height-20);
 }
 
 function draw() {

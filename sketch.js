@@ -22,7 +22,11 @@ var prevY;
 
 var input;
 
+let audioStarted = false;
+
 function setup() {
+  getAudioContext().suspend();
+  
   createCanvas(windowWidth, windowHeight);
   noStroke();
   
@@ -140,6 +144,12 @@ function draw() {
 
 //highlights which part of llama or rock can be interacted with
 function mouseMoved() { 
+  // Start audio on user gesture
+  if (!audioStarted) {
+      userStartAudio();
+      audioStarted = true;
+  }
+  
   neck.isOn(mouseX, mouseY);
   body.isOn(mouseX, mouseY);
   for(var i = 0; i<legs.length; i++) {
